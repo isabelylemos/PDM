@@ -4,18 +4,13 @@ import { Button, Pressable, StyleSheet, Text, TouchableOpacity, View } from "rea
 export default function Buttons(){
     return (
         <View style={styles.container}>
-            {/* TouchableOpacity */}
             <TouchableOpacity activeOpacity={0.8} style={styles.button}>
                 <Text style={styles.text}>TouchableOpacity</Text>
             </TouchableOpacity>
 
-            {/* Pressable - maior controle e funcionalidades */}
             <Pressable style={({pressed}) => [
-                // 1. Estilo base
                 styles.button,
-                // 2. Estilo específico
                 styles.pressable,
-                // 3. Estilo condicional
                 pressed && styles.pressed
             ]}
             onPress={() => console.log("Clicou no botão")}
@@ -25,7 +20,6 @@ export default function Buttons(){
                 <Text style={styles.text}>Pressable</Text>
             </Pressable>
 
-            {/* Voltar */}
             <TouchableOpacity onPress={() => router.back()}>
                 <Text style={styles.backLink}>Voltar</Text>
             </TouchableOpacity>
@@ -55,9 +49,9 @@ const styles = StyleSheet.create({
         opacity: 0.9,
     },
     backLink: {
-        textAlign: 'center', // Centraliza o texto
+        textAlign: 'center',
         color: '#333',
-        marginTop: 16, // Adiciona um espaço acima do link.
+        marginTop: 16,
     },
     text: {
         color: "#dfdfdf",

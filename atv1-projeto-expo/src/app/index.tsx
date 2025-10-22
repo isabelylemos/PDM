@@ -2,13 +2,10 @@ import React from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Alert, Button, ScrollView, Text, View, Image, StyleSheet, TouchableOpacity, Pressable } from "react-native";
 
-
 const handleOpenGitHub = () => {
-    // e.preventDefault() não é necessário em onPress do React Native
     WebBrowser.openBrowserAsync("https://github.com/isabelylemos");
 };
 
-// Handlers para os botões de exemplo (TouchableOpacity e Pressable)
 const handleTouchableOpacity = () => {
     Alert.alert('Ação', 'TouchableOpacity Pressionado!');
 };
@@ -17,7 +14,6 @@ const handleTouchableOpacity = () => {
 const handlePressable = () => {
     Alert.alert('Ação', 'Pressable Pressionado!');
 };
-
 
 export default function Index() {
     return (
@@ -49,7 +45,6 @@ export default function Index() {
 
                 <Text style={styles.sectionAction}>Pressione ou segure:</Text>
 
-                {/* Pressable - maior controle e funcionalidades */}
                 <Pressable 
                     style={({pressed}) => [
                         styles.button,
@@ -63,15 +58,10 @@ export default function Index() {
                     <Text style={styles.text}>Pressable</Text>
                 </Pressable>
 
-                {/* O botão "Voltar" (router.back()) foi removido pois esta é a tela inicial */}
             </View>
         </ScrollView>
     );
 }
-
-// ------------------------------------------------------------------
-// ESTILOS COMBINADOS
-// ------------------------------------------------------------------
 
 const styles = StyleSheet.create({
     scrollContainer: {
@@ -82,10 +72,9 @@ const styles = StyleSheet.create({
     contentWrapper: {
         paddingHorizontal: 32,
         gap: 16,
-        alignItems: 'center', // Centraliza o conteúdo horizontalmente
+        alignItems: 'center',
     },
 
-    // ESTILOS DE PERFIL
     avatar: {
         width: 100, 
         height: 100, 
@@ -97,12 +86,11 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
 
-    // ESTILO DO NOVO BOTÃO GITHUB (Com a sua cor #6474af e borderRadius)
     githubButton: {
         backgroundColor: "#6474af",
         paddingVertical: 12,
         paddingHorizontal: 25,
-        borderRadius: 15, // Arredondamento
+        borderRadius: 15, 
         width: '80%',
         alignItems: 'center',
         marginTop: 8,
@@ -120,27 +108,26 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     
-    // ESTILOS DA SEÇÃO DE EXEMPLOS DE BOTÕES
     sectionTitle: {
         fontSize: 20,
         fontWeight: 'bold',
         color: '#333',
         marginBottom: 5,
-        alignSelf: 'flex-start', // Alinha o título à esquerda
+        alignSelf: 'flex-start', 
     },
     sectionAction:  {
         fontSize: 15,
         fontWeight: 'bold',
         color: '#464646ff',
         marginBottom: 2,
-        alignSelf: 'flex-start', // Alinha o título à esquerda
+        alignSelf: 'flex-start',
     },
 
     button: {
         backgroundColor: "#359bcaff",
         paddingVertical: 16,
         alignItems: "center",
-        borderRadius: 15, // Arredondamento para os botões de exemplo
+        borderRadius: 15, 
         width: '100%',
     },
     pressable: {
@@ -155,5 +142,4 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
-    // Removido styles.backLink pois o botão "Voltar" foi removido
 });
